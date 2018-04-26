@@ -84,7 +84,7 @@ class WP_Quiz_Trivia_Quiz extends WP_Quiz {
 						foreach ( $question['answers'] as $answer ) {
 							$answer_img_html = '';
 							$answer_title = '';
-							$answer_img_html = '<div class="wq_answerImgCtr"><img src="' . $answer['image'] . '"></div>';
+							$answer_img_html = '<div class="wq_answerImgCtr"><img class="img-fluid" src="' . $answer['image'] . '"></div>';
 							$answer_title = empty( $answer['title'] ) ? '&nbsp;' : $answer['title'];
 							$answers_html .= '
 								<div class="' . $col_class . '">

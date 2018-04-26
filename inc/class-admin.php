@@ -67,11 +67,8 @@ class WP_Quiz_Admin {
 			esc_html__( 'Get Support for WP Quiz', 'wp-quiz' ),
 			esc_html__( 'Support', 'wp-quiz' ),
 			'manage_options',
-			'wp_quiz_support',
-			array( 'WP_Quiz_Page_Support', 'page' )
+			'wp_quiz_support'
 		);
-		add_action( 'load-' . $page_hook, array( 'WP_Quiz_Page_Support', 'load' ) );
-		add_action( 'admin_print_styles-' . $page_hook, array( 'WP_Quiz_Page_Support', 'admin_print_styles' ) );
 	}
 
 	/**

@@ -11,10 +11,10 @@ if ( false === $quiz_settings ) {
 
 	$mts_username = '';
 	// MTS Connect plugin username
-	$mts_connect_data = get_option( 'mts_connect_data' );
-	if ( false !== $mts_connect_data ) {
-		$mts_username = $mts_connect_data['username'];
-	}
+	// $mts_connect_data = get_option( 'mts_connect_data' );
+	// if ( false !== $mts_connect_data ) {
+	// 	$mts_username = $mts_connect_data['username'];
+	// }
 
 	// Create Options
 	$quiz_settings = array(

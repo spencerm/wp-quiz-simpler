@@ -8,7 +8,6 @@ class WP_Quiz_Page_Config {
 
 		wp_enqueue_style( 'semantic-checkbox-css', wp_quiz()->plugin_url() . 'assets/css/checkbox.min.css', array(), wp_quiz()->version );
 		wp_enqueue_style( 'chosen-css', wp_quiz()->plugin_url() . 'assets/css/chosen.min.css', array(), wp_quiz()->version );
-		wp_enqueue_style( 'pro-popup-css', wp_quiz()->plugin_url() . 'assets/css/pro-popup.css', array(), wp_quiz()->version );
 		?>
 			<style type="text/css" media="screen">
 				table#quiz_type_settings input[type=checkbox], table#global_settings input[type=checkbox] { float: right; }
@@ -116,10 +115,6 @@ class WP_Quiz_Page_Config {
 								do_meta_boxes( $screen->id, 'normal', $settings );
 							?>
 							</div>
-							<div id="postbox-container-1" class="postbox-container">
-								<a href="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=General+Settings+Banner&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg" target="_blank"><img  style="width:100%" src="<?php echo wp_quiz()->plugin_url() . 'assets/image/wp-quiz-pro.jpg' ?>" /></a>
-								<a href="https://community.mythemeshop.com/?utm_source=WP+Quiz+Free&utm_medium=General+Settings+Banner&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg" target="_blank"><img  style="width:100%" src="<?php echo wp_quiz()->plugin_url() . 'assets/image/have-a-question.jpg' ?>" /></a>
-							</div>
 							<p class="submit">
 								<input type="submit" name="submit" id="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'wp-quiz' ); ?>">&nbsp;
 								<!-- <input type="submit" name="default_settings" id="default_settings" class="button-secondary" value="Reset all settings to default">-->
@@ -171,10 +166,10 @@ class WP_Quiz_Page_Config {
 	?>
 		<div id="analytics_content">
 			<label for="profile_name"><?php esc_html_e( 'Profile Name', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></label>
-			<div class="disabled"><span><input type="text"  id="profile_name" value="" disabled /></span></div>
+			<div><span><input type="text"  id="profile_name" value="" /></span></div>
 
 			<label for="tracking_id"><?php esc_html_e( 'Tracking ID', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></label>
-			<div class="disabled"><span><input type="text" id="tracking_id" value="" /></span></div>
+			<div><span><input type="text" id="tracking_id" value="" /></span></div>
 		</div>
 	<?php
 	}
@@ -198,14 +193,6 @@ class WP_Quiz_Page_Config {
 						</div>
 					</td>
 				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Promote the plugin', 'wp-quiz' ); ?><br/><small><?php esc_html_e( 'Earn 70% commision on every sale by referring your friends and readers.','wp-quiz' ) ?></small></td>
-					<td>
-						<div class="ui toggle checkbox">
-							<input name="defaults[promote_plugin]" id="quiz_promote_checkbox" type="checkbox" value="1" <?php checked( $settings['promote_plugin'], true, true ) ?>>
-						</div>
-					</td>
-				</tr>
 				<?php
 					$desc = empty( $settings['mts_username'] ) ? '<a href="https://mythemeshop.com/#signup" target="_blank">' . __( 'Signup', 'wp-quiz' ) . '</a>' . __( ' and get your referral ID (username) if you don\'t have it already!', 'wp-quiz' ) : __( 'Check your affiliate earning by following ', 'wp-quiz' ) . '<a href="https://mythemeshop.com/go/aff/member/stats" target="_blank">' . __( 'this link', 'wp-quiz' ) . '</a>';
 				?>
@@ -221,86 +208,6 @@ class WP_Quiz_Page_Config {
 						<div class="ui toggle checkbox">
 							<input name="defaults[auto_scroll]" type="checkbox" value="1" <?php checked( $settings['auto_scroll'], true, true ) ?>>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Share buttons', 'wp-quiz' ); ?></td>
-					<td>
-						<?php $settings['share_buttons'] = isset( $settings['share_buttons'] ) ? $settings['share_buttons'] : array(); ?>
-						<select name="defaults[share_buttons][]" id="share_buttons" data-placeholder="None" multiple>
-							<option value="fb" <?php echo in_array( 'fb', $settings['share_buttons'] ) ? 'selected' : '' ?>><?php esc_html_e( 'Facebook', 'wp-quiz' ); ?></option>
-							<option value="tw" <?php echo in_array( 'tw', $settings['share_buttons'] ) ? 'selected' : '' ?>><?php esc_html_e( 'Twitter', 'wp-quiz' ); ?></option>
-							<option value="g+" <?php echo in_array( 'g+', $settings['share_buttons'] ) ? 'selected' : '' ?>><?php esc_html_e( 'Google +', 'wp-quiz' ); ?></option>
-							<option value="vk" <?php echo in_array( 'vk', $settings['share_buttons'] ) ? 'selected' : '' ?>><?php esc_html_e( 'VK', 'wp-quiz' ); ?></option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Enable or disable Open Graph and Twitter Cards meta tags in single quiz head tag.', 'wp-quiz' ); ?></small></td>
-					<td>
-						<div class="ui toggle checkbox">
-							<input name="defaults[share_meta]" type="checkbox" value="1" <?php checked( $settings['share_meta'], true, true ) ?>>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Facebook App ID', 'wp-quiz' ); ?><br/><small><?php printf( wp_kses( __( 'Learn how to create Facebook App ID <a href="%s" target="_blank">here</a>.', 'wp-quiz' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), 'https://youtu.be/MI1QLsDJhJ8?t=3m48s' ); ?></small></td>
-					<td>
-						<input style="width:100%;" class="ui" name="defaults[fb_app_id]" type="text" value="<?php echo $settings['fb_app_id'] ?>" >
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Randomize Questions', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="ui toggle checkbox disabled">
-							<input name="" disabled type="checkbox" value="1" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Randomize+Questions&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Randomize Answers', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="ui toggle checkbox disabled">
-							<input name="" disabled type="checkbox" value="1" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Randomize+Answers&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Show embed code toggle', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="ui toggle checkbox disabled">
-							<input disabled name="" type="checkbox" value="1" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Show+Embed&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Show Ads', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="ui toggle checkbox disabled">
-							<input disabled name="" type="checkbox" value="1" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Show+Ads&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Show Ads after every nth question', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="disabled"><input disabled style="width:100%;" class="ui" name="" type="number" value="" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Show_Ads&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg"></div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Countdown timer [Seconds/question]', 'wp-quiz' ) ?><br/><small><?php esc_html_e( 'Works only on trivia quiz type when multiple page layout is selected', 'wp-quiz' ) ?></small><br/><small class="pro-text"><?php esc_html_e( ' Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<div class="disabled"><input disabled style="width:100%;" class="ui" name="" type="number" value="" data-url="https://mythemeshop.com/plugins/wp-quiz-pro/?utm_source=WP+Quiz+Free&utm_medium=Countdown+Timer&utm_content=WP+Quiz+Pro+LP&utm_campaign=WordPressOrg"></div>
-					</td>
-				</tr>
-				<tr>
-					<td><?php esc_html_e( 'Force action to see the results', 'wp-quiz' ); ?><br/><small class="pro-text"><?php esc_html_e( 'Pro feature', 'wp-quiz' ) ?></small></td>
-					<td>
-						<select  class="ui" id="select" name="">
-							<option disabled value="0" ><?php esc_html_e( 'No Action', 'wp-quiz' ); ?></option>
-							<option disabled value="1" ><?php esc_html_e( 'Capture Email', 'wp-quiz' ); ?></option>
-							<option disabled value="2" ><?php esc_html_e( 'Facebook Share', 'wp-quiz' ); ?></option>
-						</select>
 					</td>
 				</tr>
 			</table>
