@@ -1,0 +1,13 @@
+{
+    "name": "spencerm/wp-quiz-simpler",
+    "description": "lightweight wordpress quiz plugin", 
+    "type": "wordpress-plugin",
+    "keywords": ["wordpress", "plugin"],
+    "homepage": "https://github.com/spencerm/wp-quiz-simpler/",
+    "authors": [
+        {
+            "name": "Spencer McCormick",
+            "homepage": "https://spnzr.com"
+        }
+    ]
+}
