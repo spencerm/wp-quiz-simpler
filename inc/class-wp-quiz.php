@@ -202,8 +202,8 @@ class WP_Quiz {
 		wp_enqueue_script( 'flip-js', wp_quiz()->plugin_url() . 'assets/js/jquery.flip.min.js', array( 'jquery' ), wp_quiz()->version, true );
 
 		wp_localize_script( 'wp_quiz-front-js', 'wq_l10n', array(
-			'correct'         => esc_html__( 'Correct !', 'wp-quiz' ),
-			'wrong'           => esc_html__( 'Wrong !', 'wp-quiz' ),
+			'correct'         => esc_html__( '', 'wp-quiz' ),
+			'wrong'           => esc_html__( '', 'wp-quiz' ),
 			'captionTrivia'   => esc_html__( 'You got %%score%% out of %%total%%', 'wp-quiz' ),
 			'captionTriviaFB' => esc_html__( 'I got %%score%% out of %%total%%, and you?', 'wp-quiz' ),
 		));

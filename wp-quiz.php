@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: WP Quiz
+ * Plugin Name: WP Quiz - NYA
  * Plugin URI:  https://mythemeshop.com/plugins/wp-quiz/
  * Description: WP Quiz makes it incredibly easy to add professional, multimedia quizzes to any website! Fully feature rich and optimized for social sharing. Make your site more interactive!
- * Version:     1.1.5
+ * Version:     2.0
  * Author:      MyThemeShop
  * Author URI:  https://mythemeshop.com/
  *

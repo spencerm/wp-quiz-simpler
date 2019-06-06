@@ -91,6 +91,7 @@ class WP_Quiz_Trivia_Quiz extends WP_Quiz {
 									<div class="wq_singleAnswerCtr wq_IsTrivia wq_hasImage" data-crt="' . $answer['isCorrect'] . '">
 										' . $answer_img_html . '
 										<label class="wq_answerTxtCtr">' . $answer_title . '</label>
+										<i class="fa fa-2x fa-square-o" aria-hidden="true"></i>
 									</div>
 								</div>
 							';
